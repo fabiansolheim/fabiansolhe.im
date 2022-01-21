@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link as RouterLink} from 'react-router-dom';
 import {
   ChakraProvider,
   HStack,
@@ -16,7 +17,7 @@ import {
   useMediaQuery,
   Flex,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { ColorModeSwitcher } from './components/styling/ColorModeSwitcher';
 import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
 import "./wavinghand.css";
@@ -38,32 +39,49 @@ const HeroText = () => {
 
 
 const SocialLinks = () => {
-  return(  <Box maxW={390} mt={10}>
-    <Text fontSize='xl'>
-      Ta gjerne en titt på <Link style={{textDecoration: 'underline'}}>mine prosjekter</Link>, eller min <Link style={{textDecoration: 'underline'}}>LinkedIn</Link>.
-    </Text>
-  </Box>
+  return (
+    <Box maxW={390} mt={10}>
+      <Text fontSize="xl">
+        Ta gjerne en titt på{' '}
+        <Link
+          as={RouterLink}
+          to="/prosjekter"
+          style={{ textDecoration: 'underline' }}
+        >
+          mine prosjekter
+        </Link>
+        , min{' '}
+        <Link
+          href="https://www.linkedin.com/in/FabianSolheim"
+          style={{ textDecoration: 'underline' }}
+        >
+          LinkedIn
+        </Link>
+        , eller min{' '}
+        <Link
+          href="https://www.github.com/FabianSolheim"
+          style={{ textDecoration: 'underline' }}
+        >
+          Github
+        </Link>
+        .
+      </Text>
+    </Box>
   );
 };
 
 
-const IndexPage = () => {
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
-  return(
-    <ChakraProvider resetCSS theme={theme}>
-    {isMobile ? <p>This is a mobile device</p> :       
-    <Container maxWidth="container.lg"padding="0">
-    <HeroText/>
-    <SocialLinks/>
-
-    </Container>
-    }
-    <ToggleColorMode/>
-
-
-  </ChakraProvider>
+const Index = () => {
+  const [isNotMobile] = useMediaQuery("(min-width: 600px)");
+  return (
+    <>
+      <Container maxWidth="container.lg" padding="0">
+        <Box ml={isNotMobile ? '0' : 5}>
+          <HeroText />
+          <SocialLinks />
+        </Box>
+      </Container>
+    </>
   );
-
-  
 }
-export default IndexPage;
+export default Index;

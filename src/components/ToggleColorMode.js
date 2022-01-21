@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Center} from "@chakra-ui/react";
-import { ColorModeSwitcher } from '../ColorModeSwitcher';
+import { ColorModeSwitcher } from './styling/ColorModeSwitcher';
 
 function ToggleColorMode() {
     return <Box>
