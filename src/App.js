@@ -40,7 +40,7 @@ const HeroText = () => {
 
 const SocialLinks = () => {
   return (
-    <Box maxW={390} mt={10}>
+    <Box w={390} mt={10}>
       <Text fontSize="xl">
         Ta gjerne en titt på{' '}
         <Link
@@ -75,12 +75,10 @@ const Index = () => {
   const [isNotMobile] = useMediaQuery("(min-width: 600px)");
   return (
     <>
-      <Container maxWidth="container.lg" padding="0">
         <Box ml={isNotMobile ? '0' : 5}>
           <HeroText />
           <SocialLinks />
         </Box>
-      </Container>
     </>
   );
 }

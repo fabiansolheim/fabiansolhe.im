@@ -67,12 +67,10 @@ const Prosjekter = () => {
       const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
-      <Container maxWidth="container.lg" padding="0">
         <Box ml={isNotMobile ? '0' : 5}>
           <Header />
           <HeroText />
         </Box>
-      </Container>
     </>
   );
 };

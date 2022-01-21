@@ -1,24 +1,27 @@
-import { ColorModeScript, ChakraProvider, Box, useMediaQuery } from '@chakra-ui/react';
+import { ColorModeScript, ChakraProvider, Box, useMediaQuery, Container } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import Index from './App';
 import Prosjekter from "./Prosjekter"
 import theme from "./components/styling/theme";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import ToggleColorMode from "./components/ToggleColorMode";
+import Footer from './components/Footer';
 
 ReactDOM.render(
   <StrictMode>
     <ChakraProvider resetCSS theme={theme}>
       <ColorModeScript />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/prosjekter" element={<Prosjekter />} />
-          <Route path="*" element={<h1>Not found</h1>} />
-        </Routes>
-        <ToggleColorMode />
-      </BrowserRouter>
+      <Container maxWidth="container.lg" minHeight="95vh" padding="0">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/prosjekter" element={<Prosjekter />} />
+            <Route path="*" element={<h1>Not found</h1>} />
+          </Routes>
+        </BrowserRouter>
+      </Container>
+      <Footer />
     </ChakraProvider>
   </StrictMode>,
-  document.getElementById('root'));
+  document.getElementById('root')
+);
