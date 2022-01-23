@@ -19,7 +19,8 @@ import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
 import './wavinghand.css';
 import {projects} from "./components/data/projects.js"
-
+import container from './components/styling/framerAnimations';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   return (
@@ -67,12 +68,18 @@ const Prosjekter = () => {
       const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
+              <motion.div
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={container}
+          >    
       <Container maxWidth="container.lg" minHeight="95vh" padding="0">
         <Box ml={isNotMobile ? '0' : 5}>
           <Header />
           <HeroText />
         </Box>
       </Container>
+      </motion.div>
     </>
   );
 };

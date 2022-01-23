@@ -21,6 +21,8 @@ import { ColorModeSwitcher } from './components/styling/ColorModeSwitcher';
 import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
 import "./wavinghand.css";
+import container from './components/styling/framerAnimations';
+import { motion } from 'framer-motion';
 
 /* const HeroText = () => {
   return(
@@ -84,7 +86,7 @@ const HeroText = () => {
           <Text style={{ fontWeight: 'bold', display: 'inline-block' }}>
             Fabian Solheim
           </Text>
-          . Jeg er en 21 år gammel student, og utvikler.
+          . Jeg er en 21 år gammel informatikkstudent, og utvikler.
         </Text>
       </HStack>
     </Box>
@@ -95,12 +97,18 @@ const Index = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
+               <motion.div
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={container}
+          >    
       <Container maxWidth="container.lg" minHeight="69.7vh">
         <Box ml={isNotMobile ? '0' : 5}>
           <HeroText />
           <SocialLinks />
         </Box>
       </Container>
+      </motion.div>
     </>
   );
 };
