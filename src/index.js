@@ -11,7 +11,7 @@ ReactDOM.render(
   <StrictMode>
     <ChakraProvider resetCSS theme={theme}>
       <ColorModeScript />
-      <Container maxWidth="container.lg" minHeight="95vh" padding="0">
+
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -19,7 +19,7 @@ ReactDOM.render(
             <Route path="*" element={<h1>Not found</h1>} />
           </Routes>
         </BrowserRouter>
-      </Container>
+
       <Footer />
     </ChakraProvider>
   </StrictMode>,
