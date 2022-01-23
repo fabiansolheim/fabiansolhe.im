@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link as RouterLink} from 'react-router-dom';
 import {
   ChakraProvider,
@@ -95,6 +95,10 @@ const HeroText = () => {
 
 const Index = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
+  useEffect(() => {
+    document.title = "👋🏼 Hjem | fabiansolhe.im";
+  }, []);
+
   return (
     <>
                <motion.div
