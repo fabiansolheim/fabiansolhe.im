@@ -86,7 +86,7 @@ const HeroText = () => {
           <Text style={{ fontWeight: 'bold', display: 'inline-block' }}>
             Fabian Solheim
           </Text>
-          . Jeg er en 21 år gammel informatikkstudent, og utvikler.
+          . Jeg er en 21 år gammel informatikkstudents, og utvikler.
         </Text>
       </HStack>
     </Box>
