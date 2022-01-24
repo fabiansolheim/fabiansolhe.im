@@ -2,7 +2,7 @@ export const projects = [
   {
     name: 'where.voi',
     description:
-      'A web application for finding locating all Voi scooters in Oslo.',
+      'En React applikasjon for å finne Voi sparkesykler bygd med React, og ENTURs utvikler API',
     link: 'https://wherevoi.netlify.app/',
   },
   {
