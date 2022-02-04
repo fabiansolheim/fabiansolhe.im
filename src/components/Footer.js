@@ -20,7 +20,7 @@ import {
           align={{ base: 'center', md: 'center' }}
         >
           <Text>
-            © {new Date().getFullYear()} Fabian Solheim. All rights reserved
+            © {new Date().getFullYear()} Fabian Solheim. All rights reserved.
           </Text>
             <ToggleColorMode />
         </Container>
