@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {Link as RouterLink} from 'react-router-dom';
+import hadtodoittoem from './images/hadtodoittoem.jpg';
 import {
   ChakraProvider,
   HStack,
@@ -7,6 +8,7 @@ import {
   Text,
   Link,
   Container,
+  Image,
   Button,
   VStack,
   Code,
@@ -40,41 +42,25 @@ import { motion } from 'framer-motion';
 }
 
  */
-const SocialLinks = () => {
-  return (
-    <Box w={390} mt={10}>
-      <Text fontSize="xl">
-        Ta gjerne en titt på{' '}
-        <Link
-          as={RouterLink}
-          to="/prosjekter"
-          style={{ textDecoration: 'underline' }}
-        >
-          mine prosjekter
-        </Link>
-        , min{' '}
-        <Link
-          href="https://www.linkedin.com/in/FabianSolheim"
-          style={{ textDecoration: 'underline' }}
-        >
-          LinkedIn
-        </Link>
-        , eller min{' '}
-        <Link
-          href="https://www.github.com/FabianSolheim"
-          style={{ textDecoration: 'underline' }}
-        >
-          Github
-        </Link>
-        .
-      </Text>
-    </Box>
-  );
-};
+
+const MyImage = () => {
+  return(  
+  <Box boxSize='sm'>
+  <Image src={hadtodoittoem} 
+      boxSize='300px'
+      objectFit='cover'
+  alt='Fabian Solheim' />
+</Box>
+)
+
+}
+
 
 const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
+    <>
+
     <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
       <Heading mb={4}>
         Hei
@@ -90,6 +76,36 @@ const HeroText = () => {
         </Text>
       </HStack>
     </Box>
+
+<Box w={390} mt={10}>
+<Text fontSize="xl">
+  Ta gjerne en titt på{' '}
+  <Link
+    as={RouterLink}
+    to="/prosjekter"
+    style={{ textDecoration: 'underline' }}
+  >
+    mine prosjekter
+  </Link>
+  , min{' '}
+  <Link
+    href="https://www.linkedin.com/in/FabianSolheim"
+    style={{ textDecoration: 'underline' }}
+  >
+    LinkedIn
+  </Link>
+  , eller min{' '}
+  <Link
+    href="https://www.github.com/FabianSolheim"
+    style={{ textDecoration: 'underline' }}
+  >
+    Github
+  </Link>
+  .
+</Text>
+</Box>
+
+</>
   );
 };
 
@@ -101,7 +117,7 @@ const Index = () => {
 
   return (
     <>
-               <motion.div
+           <motion.div
             initial="pageInitial"
             animate="pageAnimate"
             variants={container}
@@ -109,7 +125,6 @@ const Index = () => {
       <Container maxWidth="container.lg" minHeight="69.7vh">
         <Box ml={isNotMobile ? '0' : 5}>
           <HeroText />
-          <SocialLinks />
         </Box>
       </Container>
       </motion.div>

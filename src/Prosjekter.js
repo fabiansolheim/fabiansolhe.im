@@ -37,7 +37,7 @@ const Header = () => {
 const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
-    <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
+    <Box mt={isNotMobile ? 20 : 153} position="relative" w={[300, 400, 500]}>
       <Heading mb={4}>Prosjekter</Heading>
       <HStack>
         <ul>
