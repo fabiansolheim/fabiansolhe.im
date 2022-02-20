@@ -2,7 +2,7 @@ export const projects = [
   {
     name: 'spiritual.space',
     description: 'SpiritualSpace er en moodtracker Web-applikasjon som fortsatt er under utvikling. Data lagres i Firestore',
-    link: 'https://spiritual-space.netlify.app/',
+    link: 'https://getspiritual.space',
   },
   {
     name: 'where.voi',
