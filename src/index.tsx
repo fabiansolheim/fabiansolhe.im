@@ -24,7 +24,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/prosjekter" element={<Prosjekter />} />
-                <Route path="*" title="404 Ikke funnet" element={<h1>Not found</h1>} />
+                <Route path="*" element={<h1>Not found</h1>} />
               </Routes>
           <Footer />
         </ChakraProvider>

@@ -17,8 +17,8 @@ import {
 } from '@chakra-ui/react';
 import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
-import './wavinghand.css';
-import {projects} from "./components/data/projects.js"
+import './components/styling/wave.css';
+import {projects} from "./components/data/projects"
 import container from './components/styling/framerAnimations';
 import { motion } from 'framer-motion';
 
