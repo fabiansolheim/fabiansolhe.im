@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   ChakraProvider,
@@ -19,7 +19,8 @@ import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
 import './wavinghand.css';
 import {projects} from "./components/data/projects.js"
-
+import container from './components/styling/framerAnimations';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   return (
@@ -36,7 +37,7 @@ const Header = () => {
 const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
-    <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
+    <Box mt={isNotMobile ? 20 : 105} position="relative" w={[300, 400, 500]}>
       <Heading mb={4}>Prosjekter</Heading>
       <HStack>
         <ul>
@@ -64,15 +65,27 @@ const HeroText = () => {
 };
 
 const Prosjekter = () => {
+
+useEffect(() => {
+    document.title = "👋🏼 Prosjekter | fabiansolhe.im";
+  }, []);
+
+
       const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
+              <motion.div
+            initial="pageInitial"
+            animate="pageAnimate"
+            variants={container}
+          >    
       <Container maxWidth="container.lg" minHeight="95vh" padding="0">
         <Box ml={isNotMobile ? '0' : 5}>
           <Header />
           <HeroText />
         </Box>
       </Container>
+      </motion.div>
     </>
   );
 };
