@@ -7,7 +7,9 @@ import {
   Text,
   Link,
   Container,
+  Spacer,
   Divider,
+  useColorMode,
   Center,
   Heading,
   Grid,
@@ -22,19 +24,9 @@ import {projects} from "./components/data/projects"
 import container from './components/styling/framerAnimations';
 import { motion } from 'framer-motion';
 
-const Header = () => {
-  return (
-    <Flex as="nav" wrap="wrap" mt={6} >
-        <Heading as="h1" size="lg">
-          <Link as={RouterLink} to={'/'}>
-            fabiansolhe.im
-          </Link>
-        </Heading>
-    </Flex>
-  );
-}
-
 const HeroText = () => {
+  const {colorMode} = useColorMode();
+
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <Box mt={isNotMobile ? 20 : 105} position="relative" w={[300, 400, 500]}>
@@ -47,14 +39,16 @@ const HeroText = () => {
                 <Text fontSize="xl">
                   <Link
                     style={{ textDecoration: 'underline' }}
-                    _target="_blank"
                     href={project.link}
                   >
                     {project.name}
                   </Link>
                 </Text>
                 <p>{project.description}</p>
-                <Divider mt={4} />
+                <Divider
+                  borderColor={colorMode === 'light' ? '#444' : '#eee'}
+                  mt={4}
+                />
               </li>
             </Box>
           ))}
@@ -71,7 +65,6 @@ useEffect(() => {
   }, []);
 
 
-      const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
               <motion.div
@@ -79,12 +72,9 @@ useEffect(() => {
             animate="pageAnimate"
             variants={container}
           >    
-      <Container maxWidth="container.lg" minHeight="95vh" padding="0">
-        <Box ml={isNotMobile ? '0' : 5}>
-          <Header />
+        <Box mt={190}>
           <HeroText />
         </Box>
-      </Container>
       </motion.div>
     </>
   );

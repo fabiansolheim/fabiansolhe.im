@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {Link as RouterLink} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   ChakraProvider,
   HStack,
@@ -46,73 +46,66 @@ const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
-
-    <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
-      <Heading mb={4}>
-        Hei
-        <span className="wave">👋🏼</span>
-      </Heading>
-      <HStack>
-        <Text fontSize="xl" style={{ display: 'inline-block' }}>
-          Jeg er{' '}
-          <Text style={{ fontWeight: 'bold', display: 'inline-block' }}>
-            Fabian Solheim
+      <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
+        <Heading mb={4}>
+          Hei
+          <span className="wave">👋🏼</span>
+        </Heading>
+        <HStack>
+          <Text fontSize="xl" style={{ display: 'inline-block' }}>
+            Jeg er{' '}
+            <Text style={{ fontWeight: 'bold', display: 'inline-block' }}>
+              Fabian Solheim
+            </Text>
+            . Jeg er en 21 år gammel informatikkstudent, og utvikler.
           </Text>
-          . Jeg er en 21 år gammel informatikkstudent, og utvikler.
+        </HStack>
+      </Box>
+
+      <Box w={390} mt={10}>
+        <Text fontSize="xl">
+          Ta gjerne en titt på{' '}
+          <Link
+            as={RouterLink}
+            to="/prosjekter"
+            style={{ textDecoration: 'underline' }}
+          >
+            mine prosjekter
+          </Link>
+          , min{' '}
+          <Link
+            href="https://www.linkedin.com/in/FabianSolheim"
+            style={{ textDecoration: 'underline' }}
+          >
+            LinkedIn
+          </Link>
+          , eller min{' '}
+          <Link
+            href="https://www.github.com/FabianSolheim"
+            style={{ textDecoration: 'underline' }}
+          >
+            Github
+          </Link>
+          .
         </Text>
-      </HStack>
-    </Box>
-
-<Box w={390} mt={10}>
-<Text fontSize="xl">
-  Ta gjerne en titt på{' '}
-  <Link
-    as={RouterLink}
-    to="/prosjekter"
-    style={{ textDecoration: 'underline' }}
-  >
-    mine prosjekter
-  </Link>
-  , min{' '}
-  <Link
-    href="https://www.linkedin.com/in/FabianSolheim"
-    style={{ textDecoration: 'underline' }}
-  >
-    LinkedIn
-  </Link>
-  , eller min{' '}
-  <Link
-    href="https://www.github.com/FabianSolheim"
-    style={{ textDecoration: 'underline' }}
-  >
-    Github
-  </Link>
-  .
-</Text>
-</Box>
-
-</>
+      </Box>
+    </>
   );
 };
 
 const Index = () => {
-  const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   useEffect(() => {
-    document.title = "👋🏼 Hjem | fabiansolhe.im";
+    document.title = '👋🏼 Hjem | fabiansolhe.im';
   }, []);
 
   return (
     <>
-           <motion.div
-            initial="pageInitial"
-            animate="pageAnimate"
-            variants={container}
-          >    
-      <Container maxWidth="container.lg" minHeight="69.7vh">
-        <Box ml={isNotMobile ? '0' : 5}>
+      <motion.div
+        initial="pageInitial"
+        animate="pageAnimate"
+        variants={container}
+      >
           <HeroText />
-        </Box>
-      </Container>
       </motion.div>
     </>
   );
