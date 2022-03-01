@@ -14,10 +14,9 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
 } from 'react-router-dom';
 import Footer from './components/Footer';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import container from './components/styling/framerAnimations';
 import Header from './components/Header';
 
@@ -34,7 +33,7 @@ const App = () => {
             variants={container}
           >
             <Container maxWidth="container.lg" minHeight="69.7vh" padding="0">
-              <Box //ml={isNotMobile ? '0' : 5}
+              <Box
                ml={[5, 10, 20]}>
                 <Header />
                 <Routes>
@@ -44,6 +43,7 @@ const App = () => {
                 </Routes>
               </Box>
             </Container>
+            <Footer/>
           </motion.div>
         </ChakraProvider>
       </StrictMode>

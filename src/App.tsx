@@ -25,28 +25,11 @@ import './components/styling/wave.css';
 import container from './components/styling/framerAnimations';
 import { motion } from 'framer-motion';
 
-/* const HeroText = () => {
-  return(
-    <Box w={[300, 400, 500]} mt={60}>
-    <Heading mb={4}>Hei
-    <span className="wave">👋🏼</span>
-    </Heading>
-    <HStack>
-    <Text fontSize='xl' style={{display: 'inline-block'}}>
-      Jeg er <Text style={{fontWeight: 'bold', display: 'inline-block'}}>Fabian Solheim</Text>. Jeg er en 21 år gammel student, og utvikler.
-    </Text>
-    </HStack>
-  </Box>
-  )
-}
-
- */
-
 const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
   return (
     <>
-      <Box mt={isNotMobile ? 60 : 153} position="relative" w={[300, 400, 500]}>
+      <Box mt={isNotMobile ? 200 : 153} position="relative" w={[300, 400, 500]}>
         <Heading mb={4}>
           Hei
           <span className="wave">👋🏼</span>
