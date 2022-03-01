@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   ChakraProvider,
@@ -20,16 +20,14 @@ import {
 import Footer from './components/Footer';
 import ToggleColorMode from './components/ToggleColorMode';
 import './components/styling/wave.css';
-import {projects} from "./components/data/projects"
+import { projects } from './components/data/projects';
 import container from './components/styling/framerAnimations';
 import { motion } from 'framer-motion';
 
 const HeroText = () => {
-  const {colorMode} = useColorMode();
-
-  const [isNotMobile] = useMediaQuery('(min-width: 600px)');
+  const { colorMode } = useColorMode();
   return (
-    <Box mt={isNotMobile ? 20 : 105} position="relative" w={[300, 400, 500]}>
+    <Box position="relative" w={[300, 400, 500]}>
       <Heading mb={4}>Prosjekter</Heading>
       <HStack>
         <ul>
@@ -59,20 +57,19 @@ const HeroText = () => {
 };
 
 const Prosjekter = () => {
-
-useEffect(() => {
-    document.title = "👋🏼 Prosjekter | fabiansolhe.im";
+  const [isNotMobile] = useMediaQuery('(min-width: 600px)');
+  useEffect(() => {
+    document.title = '👋🏼 Prosjekter | fabiansolhe.im';
   }, []);
-
 
   return (
     <>
-              <motion.div
-            initial="pageInitial"
-            animate="pageAnimate"
-            variants={container}
-          >    
-        <Box mt={190}>
+      <motion.div
+        initial="pageInitial"
+        animate="pageAnimate"
+        variants={container}
+      >
+        <Box mt={isNotMobile ? 150 : 100}>
           <HeroText />
         </Box>
       </motion.div>
