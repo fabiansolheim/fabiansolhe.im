@@ -19,7 +19,7 @@ import {
           as={Stack}
           align={{ base: 'center'}}
         >
-          <Text>
+          <Text fontSize='xs'>
             © {new Date().getFullYear()} Fabian Solheim. All rights reserved.
           </Text>
         </Container>

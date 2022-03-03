@@ -1,29 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
-  ChakraProvider,
   HStack,
   Box,
   Text,
   Link,
-  Container,
-  Image,
-  Button,
-  VStack,
-  Code,
-  Center,
   Heading,
-  Grid,
-  theme,
   useMediaQuery,
-  Flex,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './components/styling/ColorModeSwitcher';
-import Footer from './components/Footer';
-import ToggleColorMode from './components/ToggleColorMode';
 import './components/styling/wave.css';
 import container from './components/styling/framerAnimations';
 import { motion } from 'framer-motion';
+
+
+
 
 const HeroText = () => {
   const [isNotMobile] = useMediaQuery('(min-width: 600px)');
@@ -86,8 +76,7 @@ const Index = () => {
       <motion.div
         initial="pageInitial"
         animate="pageAnimate"
-        variants={container}
-      >
+        variants={container}>
           <HeroText />
       </motion.div>
     </>
