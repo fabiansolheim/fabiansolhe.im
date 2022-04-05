@@ -34,8 +34,8 @@ const App = () => {
             variants={container}
           >
             <Container maxWidth="container.lg" minHeight="69.7vh" padding="0">
-              <Box //ml={isNotMobile ? '0' : 5}
-               ml={[5, 10, 20]}>
+              <Box
+               ml={[5, 10, ]}>
                 <Header />
                 <Routes>
                   <Route path="/" element={<Index />} />
