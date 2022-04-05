@@ -14,10 +14,9 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
 } from 'react-router-dom';
 import Footer from './components/Footer';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import container from './components/styling/framerAnimations';
 import Header from './components/Header';
 
@@ -35,7 +34,7 @@ const App = () => {
           >
             <Container maxWidth="container.lg" minHeight="69.7vh" padding="0">
               <Box
-               ml={[5, 10, ]}>
+               ml={[5, 10, 20]}>
                 <Header />
                 <Routes>
                   <Route path="/" element={<Index />} />
@@ -43,7 +42,9 @@ const App = () => {
                   <Route path="*" element={<h1>Not found</h1>} />
                 </Routes>
               </Box>
+              <Footer/>
             </Container>
+
           </motion.div>
         </ChakraProvider>
       </StrictMode>
