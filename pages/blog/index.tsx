@@ -46,7 +46,6 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <>
       <Flex
         mt={50}
-        border="2px red solid"
         justifyContent="space-between"
         gap={6}
       >
