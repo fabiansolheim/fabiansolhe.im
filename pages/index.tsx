@@ -1,10 +1,9 @@
-import { Box, ColorModeScript, Container, Flex, Heading, HStack, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Link, ColorModeScript, Container, Flex, Heading, HStack, Text, useMediaQuery } from '@chakra-ui/react';
 import type { NextPage } from 'next'
 import container from "../styles/framerVariations"
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import { motion } from "framer-motion";
-import Link from 'next/link';
 
 
 const Home: NextPage = () => {
@@ -35,22 +34,22 @@ const Home: NextPage = () => {
       <Box w={[300, 400, 500]}>
         <Text fontSize="xl">
           Ta gjerne en titt på{" "}
-          <Link href="/prosjekter" style={{ textDecoration: "underline" }}>
-            mine prosjekter
+          <Link textDecoration="underline" href="/blog">
+            min blogg
           </Link>
-          , min{" "}
+          ,
           <Link
             href="https://www.linkedin.com/in/FabianSolheim"
             style={{ textDecoration: "underline" }}
           >
-            LinkedIn
+            {" "}min LinkedIn
           </Link>
-          , eller min{" "}
+          , eller{" "}
           <Link
             href="https://www.github.com/FabianSolheim"
             style={{ textDecoration: "underline" }}
           >
-            Github
+            min Github
           </Link>
           .
         </Text>

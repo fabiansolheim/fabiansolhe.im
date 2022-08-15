@@ -8,9 +8,10 @@ import {
   IconButton,
   useColorMode,
   useColorModeValue,
+  Link
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import Link from "next/link";
+
 
 const ColorModeSwitcher = (props: any) => {
   const { toggleColorMode } = useColorMode();
@@ -24,7 +25,6 @@ const ColorModeSwitcher = (props: any) => {
       aria-label={`Switch to ${text} mode`}
       variant="ghost"
       color="current"
-
       onClick={toggleColorMode}
       icon={<SwitchIcon />}
       {...props}
@@ -33,11 +33,10 @@ const ColorModeSwitcher = (props: any) => {
 };
 
 const Header = () => {
-  const [isNotMobile] = useMediaQuery("(min-width: 600px)");
   return (
     <Flex as="nav" mt={6}>
       <Heading as="h1" size="lg">
-        <Link href={"/"}>fabiansolhe.im</Link>
+        <Link _hover={{textDecoration: "underline"}} href={"/"}>fabiansolhe.im</Link>
       </Heading>
       <Spacer />
       <Box>

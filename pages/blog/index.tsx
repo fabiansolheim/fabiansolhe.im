@@ -6,17 +6,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Box, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
 
 import { parseISO, format } from "date-fns";
-
-type Post = {
-  slug: string;
-  frontmatter: {
-    title: string;
-    excerpt: string;
-    cover_image: string;
-    date: string;
-    socialImage: string;
-  };
-};
+import { Post } from '../../types/post';
 
 
 export const getStaticProps: GetStaticProps = async () => {
