@@ -11,45 +11,45 @@ const Home: NextPage = () => {
     <Flex
       gap={10}
       flexDir="column"
-      h={"container.sm"}
+      h={'container.sm'}
       justify="center"
-      width={"100%"}
+      width={'100%'}
     >
       <Box w={[300, 400, 500]}>
         <Heading mb={4}>
-          Hei
+          Hey
           <span className="wave">👋🏼</span>
         </Heading>
         <HStack>
-          <Text fontSize="xl" style={{ display: "inline-block" }}>
-            Jeg er{" "}
-            <strong style={{ fontWeight: "bold", display: "inline-block" }}>
+          <Text fontSize="xl" style={{ display: 'inline-block' }}>
+            My name is{' '}
+            <strong style={{ fontWeight: 'bold', display: 'inline-block' }}>
               Fabian Solheim
             </strong>
-            . Jeg er en 21 år gammel informatikkstudent, og utvikler.
+            . I am a 21 year old software developer and student living in Oslo, Norway.
           </Text>
         </HStack>
       </Box>
 
       <Box w={[300, 400, 500]}>
         <Text fontSize="xl">
-          Ta gjerne en titt på{" "}
+          Feel free to check out{' '}
           <Link textDecoration="underline" href="/blog">
-            min blogg
+            my blog
           </Link>
-          ,
+          ,{' '}
           <Link
             href="https://www.linkedin.com/in/FabianSolheim"
-            style={{ textDecoration: "underline" }}
+            style={{ textDecoration: 'underline' }}
           >
-            {" "}min LinkedIn
+            LinkedIn
           </Link>
-          , eller{" "}
+          , or{' '}
           <Link
             href="https://www.github.com/FabianSolheim"
-            style={{ textDecoration: "underline" }}
+            style={{ textDecoration: 'underline' }}
           >
-            min Github
+            Github
           </Link>
           .
         </Text>

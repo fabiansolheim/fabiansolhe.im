@@ -48,7 +48,7 @@ export default function PostPage({ frontmatter, content }: any) {
         align="center"
       >
         <BsArrowLeft />
-        <Text fontWeight={600}>Tilbake</Text>
+        <Text fontWeight={600}>Go back</Text>
       </Flex>
       <Heading>{frontmatter.title}</Heading>
       <Text>{formatted}</Text>
