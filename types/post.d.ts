@@ -7,6 +7,7 @@ type Post = {
     date: string;
     socialImage: string;
   };
+  content: string;
 };
 
 export { Post };

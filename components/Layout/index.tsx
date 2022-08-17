@@ -1,16 +1,19 @@
 import { Box, Center, Container, useMediaQuery } from '@chakra-ui/react';
 import { NextPage } from 'next';
+import Head from 'next/head';
 import React from 'react'
 import Footer from '../Footer';
 import Header from '../Header';
 
 const Layout = ({ children }: any) => {
-    const [isNotMobile] = useMediaQuery("(min-width: 600px)");
   return (
     <>
-      <Container  maxWidth="container.lg" minHeight="69.7vh" >
+      <Head>
+        <link rel="shortcut icon" href="./favicon.ico" />
+      </Head>
+      <Container maxWidth="container.lg" minHeight="69.7vh">
         <Header />
-          {children}
+        {children}
         <Footer />
       </Container>
     </>

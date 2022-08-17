@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import {Post} from "../../../types/post";
 import {BsArrowLeft} from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
@@ -23,6 +24,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: ParsedUrlQuery }) {
   const fileName = fs.readFileSync(`posts/${params.slug}.md`, 'utf-8');
+
+  console.log(fileName)
   const { data: frontmatter, content } = matter(fileName);
   return {
     props: {
@@ -32,26 +35,29 @@ export async function getStaticProps({ params }: { params: ParsedUrlQuery }) {
   };
 }
 
-export default function PostPage({ frontmatter, content }: any) {
-  const date = parseISO(frontmatter.date);
-  const formatted = format(date, 'LLLL d, yyyy');
+export default function PostPage({ frontmatter }: any) {
+ const Router = useRouter()
 
-  const router = useRouter();
+const date = parseISO(frontmatter.date);
+const formatted = format(date, "LLLL d, yyyy");
 
   return (
-    <Box mt={10}>
-      <Flex
-      w={"max-content"}
-        gap={2}
-        onClick={() => router.back()}
-        cursor="pointer"
-        align="center"
-      >
-        <BsArrowLeft />
-        <Text fontWeight={600}>Go back</Text>
-      </Flex>
-      <Heading>{frontmatter.title}</Heading>
-      <Text>{formatted}</Text>
-    </Box>
+    <>
+
+        <Box mt={10}>
+          <Flex
+            w={"max-content"}
+            gap={2}
+            onClick={() => Router.back()}
+            cursor="pointer"
+            align="center"
+          >
+            <BsArrowLeft />
+            <Text fontWeight={600}>Go back</Text>
+          </Flex>
+          <Heading>{frontmatter.title}</Heading>
+          <Text>{formatted}</Text>
+        </Box>
+    </>
   );
 }
