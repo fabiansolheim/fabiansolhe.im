@@ -51,7 +51,7 @@ const date = parseISO(frontmatter.date);
 const formatted = format(date, "LLLL d, yyyy");
 
   return (
-    <Box key={slug} w={{ base: '100%'}}  border="2px green solid">
+    <Box key={slug} w={{ base: '100%'}}>
       <Link href={`/blog/post/${slug}`}>
         <a>
           <Image
@@ -68,6 +68,7 @@ const formatted = format(date, "LLLL d, yyyy");
             <Heading color="black.500" size="md" className="p-4">
               {frontmatter.title}
             </Heading>
+            <Text>Test</Text>
           </Box>
         </a>
       </Link>
