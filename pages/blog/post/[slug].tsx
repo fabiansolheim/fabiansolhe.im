@@ -41,6 +41,7 @@ export default function PostPage({ frontmatter, content }: any) {
   return (
     <Box mt={10}>
       <Flex
+      w={"max-content"}
         gap={2}
         onClick={() => router.back()}
         cursor="pointer"
