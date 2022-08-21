@@ -9,9 +9,9 @@ import {
   Flex,
   Grid,
   Heading,
-  Image,
   Text,
 } from "@chakra-ui/react";
+import {Image} from "@chakra-ui/image";
 
 import { parseISO, format } from "date-fns";
 import { Post } from "../../types/post";
@@ -40,15 +40,15 @@ export const getStaticProps: GetStaticProps = async () => {
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <Heading  mt={15} size={"lg"}>Articles ({posts.length})</Heading>
       <Grid
         mt={50}
         w={"100%"}
         gap={10}
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
       >
-        {posts.map(({ slug, frontmatter, content }: Post) => (
+        {posts.map(({ slug, frontmatter }: Post) => (
           <BlogListPreview
-            content={content}
             key={slug}
             slug={slug}
             frontmatter={frontmatter}
@@ -58,22 +58,17 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     </>
   );
 };
-const BlogListPreview = ({ slug, frontmatter, content }: any) => {
+const BlogListPreview = ({ slug, frontmatter }: Post) => {
   const date = parseISO(frontmatter.date);
   const formatted = format(date, "LLLL d, yyyy");
 
-  const calculateReadTime = (content: string) => {
-    const wordsPerMinute = 200;
-    const numberOfWords = content.split(/\s/g).length;
-    return Math.ceil(numberOfWords / wordsPerMinute);
-  };
 
   return (
     <Box key={slug} w={{ base: "100%" }}>
       <Link href={`/blog/post/${slug}`}>
         <a>
           <Image
-            src={frontmatter.socialImage}
+            src={frontmatter.imageURL}
             alt={frontmatter.title}
             width={"100%"}
             height={"40%"}

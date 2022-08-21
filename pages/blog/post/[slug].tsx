@@ -5,7 +5,6 @@ import matter from "gray-matter";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
-import {Post} from "../../../types/post";
 import {BsArrowLeft} from "react-icons/bs";
 import { useEffect, useState } from "react";
 
