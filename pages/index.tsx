@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           >
             LinkedIn
           </Link>
-          , or{' '}
+           or{' '}
           <Link
             href="https://www.github.com/FabianSolheim"
             style={{ textDecoration: 'underline' }}
