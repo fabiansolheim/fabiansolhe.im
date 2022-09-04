@@ -8,8 +8,10 @@ import {
   IconButton,
   useColorMode,
   useColorModeValue,
-  Link
+  textDecoration,
+  Link,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 
@@ -36,7 +38,9 @@ const Header = () => {
   return (
     <Flex as="nav" mt={6}>
       <Heading as="h1" size="lg">
-        <Link _hover={{textDecoration: "underline"}} href={"/"}>fabiansolhe.im</Link>
+        <NextLink href="/" passHref>
+          <Link _hover={{ textDecoration: "underline" }}>fabiansolhe.im</Link>
+        </NextLink>
       </Heading>
       <Spacer />
       <Box>

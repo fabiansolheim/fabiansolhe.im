@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
+import NextLink from "next/link";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   Box,
@@ -15,7 +15,6 @@ import {Image} from "@chakra-ui/image";
 
 import { parseISO, format } from "date-fns";
 import { Post } from "../../types/post";
-import { useRouter } from "next/router";
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync("posts");
@@ -61,11 +60,10 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 const BlogListPreview = ({ slug, frontmatter }: Post) => {
   const date = parseISO(frontmatter.date);
   const formatted = format(date, "LLLL d, yyyy");
-
-
+  
   return (
     <Box key={slug} w={{ base: "100%" }}>
-      <Link href={`/blog/post/${slug}`}>
+      <NextLink href={`/blog/post/${slug}`}>
         <a>
           <Image
             src={frontmatter.imageURL}
@@ -85,7 +83,7 @@ const BlogListPreview = ({ slug, frontmatter }: Post) => {
             <Text>Test</Text>
           </Box>
         </a>
-      </Link>
+      </NextLink>
     </Box>
   );
 };
