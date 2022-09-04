@@ -27,8 +27,8 @@ const Home: NextPage = () => {
             <strong style={{ fontWeight: "bold", display: "inline-block" }}>
               Fabian Solheim
             </strong>
-            . I am a 21 year old software developer and computer science student living in Oslo,
-            Norway.
+            . I am a 21 year old software developer and computer science student
+            living in Oslo, Norway.
           </Text>
         </HStack>
       </Box>
@@ -45,8 +45,8 @@ const Home: NextPage = () => {
             style={{ textDecoration: "underline" }}
           >
             LinkedIn
-          </Link>
-           or{' '}
+          </Link>{" "}
+          or{" "}
           <Link
             href="https://www.github.com/FabianSolheim"
             style={{ textDecoration: "underline" }}
