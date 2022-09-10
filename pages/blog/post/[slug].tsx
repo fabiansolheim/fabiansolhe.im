@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { format, parseISO } from "date-fns";
 import fs from "fs";
 import matter from "gray-matter";
@@ -34,29 +34,43 @@ export async function getStaticProps({ params }: { params: ParsedUrlQuery }) {
   };
 }
 
-export default function PostPage({ frontmatter }: any) {
+export default function PostPage({ frontmatter, content }: any) {
  const Router = useRouter()
 
 const date = parseISO(frontmatter.date);
-const formatted = format(date, "LLLL d, yyyy");
+const dateFormatted = format(date, "LLLL d, yyyy");
 
+const calcTimeToRead = (content: string): number => {
+    const wordsPerMinute = 200;
+    const noOfWords = content.split(/\s/g).length;
+    const minutes = noOfWords / wordsPerMinute;
+    const readTime = Math.ceil(minutes);
+    return readTime;
+  };
+
+const timeToRead = calcTimeToRead(content);
   return (
     <>
-
-        <Box mt={10}>
-          <Flex
-            w={"max-content"}
-            gap={2}
-            onClick={() => Router.back()}
-            cursor="pointer"
-            align="center"
-          >
-            <BsArrowLeft />
-            <Text fontWeight={600}>Go back</Text>
-          </Flex>
-          <Heading>{frontmatter.title}</Heading>
-          <Text>{formatted}</Text>
-        </Box>
+      <Box mt={10}>
+        <Flex
+          w={"max-content"}
+          gap={2}
+          onClick={() => Router.back()}
+          cursor="pointer"
+          align="center"
+        >
+          <BsArrowLeft />
+          <Text fontWeight={600}>Go back</Text>
+        </Flex>
+        <Heading>{frontmatter.title}</Heading>
+        <Text>
+          {dateFormatted} ⋅ {timeToRead} min read
+        </Text>
+      </Box>
+      <Divider my={8}/>
+      <Box mt={8}>
+        {content}
+      </Box>
     </>
   );
 }

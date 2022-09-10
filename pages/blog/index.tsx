@@ -76,7 +76,6 @@ const BlogListPreview = ({ slug, frontmatter }: Post) => {
           />
           <Box bg="white.500" mt={5}>
             <Text>{formatted}</Text>
-            <Text></Text>
             <Heading color="black.500" size="md" className="p-4">
               {frontmatter.title}
             </Heading>
