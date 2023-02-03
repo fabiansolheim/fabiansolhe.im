@@ -8,6 +8,17 @@ import { ParsedUrlQuery } from "querystring";
 import {BsArrowLeft} from "react-icons/bs";
 import { useEffect, useState } from "react";
 
+
+type PostPageProps = {
+  frontmatter: {
+    title: string;
+    date: string;
+    cover_image: string;
+  };
+  content: string;
+};
+
+
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
   const paths = files.map((fileName) => ({
@@ -34,7 +45,7 @@ export async function getStaticProps({ params }: { params: ParsedUrlQuery }) {
   };
 }
 
-export default function PostPage({ frontmatter, content }: any) {
+export default function PostPage({ frontmatter , content }: PostPageProps) {
  const Router = useRouter()
 
 const date = parseISO(frontmatter.date);

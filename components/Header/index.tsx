@@ -10,31 +10,34 @@ import {
   useColorModeValue,
   textDecoration,
   Link,
+  IconButtonProps,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 
-const ColorModeSwitcher = (props: any) => {
-  const { toggleColorMode } = useColorMode();
-  const text = useColorModeValue("dark", "light");
-  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
-  return (
-    <IconButton
-      size="md"
-      fontSize="lg"
-      aria-label={`Switch to ${text} mode`}
-      variant="ghost"
-      color="current"
-      onClick={toggleColorMode}
-      icon={<SwitchIcon />}
-      {...props}
-    />
-  );
-};
+const ColorModeSwitcher = (props: IconButtonProps): JSX.Element => {
+    const { toggleColorMode } = useColorMode();
+    const SwitchIcon = useColorModeValue(FaMoon, FaSun);
+
+    return (
+      <IconButton
+        size="md"
+        fontSize="lg"
+        
+        variant="ghost"
+        color="current"
+        onClick={toggleColorMode}
+        icon={<SwitchIcon />}
+        {...props}
+      />
+    );
+  };
 
 const Header = () => {
+    const text = useColorModeValue("dark", "light");
+
   return (
     <Flex as="nav" mt={6}>
       <Heading as="h1" size="lg">
@@ -44,7 +47,10 @@ const Header = () => {
       </Heading>
       <Spacer />
       <Box>
-        <ColorModeSwitcher justifySelf="flex-end" />
+        <ColorModeSwitcher
+          aria-label={`Switch to ${text} mode`}
+          justifySelf="flex-end"
+        />
       </Box>
     </Flex>
   );
