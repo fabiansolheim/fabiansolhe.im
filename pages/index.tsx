@@ -8,12 +8,16 @@ import { motion } from "framer-motion";
 
 
 const Home: NextPage = () => {
+
+  const dob = new Date("11/28/2000");
+  const age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
   return (
     <Flex
       gap={10}
       flexDir="column"
       h={"container.sm"}
       justify="center"
+      height={"75vh"}
       width={"100%"}
     >
       <Box w={[300, 400, 500]}>
@@ -27,13 +31,13 @@ const Home: NextPage = () => {
             <strong style={{ fontWeight: "bold", display: "inline-block" }}>
               Fabian Solheim
             </strong>
-            . I am a 21 year old software developer and computer science student
-            living in Oslo, Norway.
+            . I am a {age} year old software developer
+            living in Oslo, Norway. Currently working as a software developer at <Link href="https://www.moment.team/" style={{ textDecoration: "underline" }}>Moment</Link>.
           </Text>
         </HStack>
       </Box>
 
-      <Box w={[300, 400, 500]}>
+      <Box w={[300, 400, 500]} >
         <Text fontSize="xl">
           Feel free to check out{" "}
           <NextLink href="/blog" passHref>

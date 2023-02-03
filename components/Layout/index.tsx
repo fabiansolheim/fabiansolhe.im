@@ -14,7 +14,6 @@ const Layout = ({ children }: any) => {
       <Container maxWidth="container.lg" minHeight="69.7vh">
         <Header />
         {children}
-        <Footer />
       </Container>
     </>
   );
