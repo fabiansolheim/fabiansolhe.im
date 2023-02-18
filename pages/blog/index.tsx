@@ -17,9 +17,7 @@ import { parseISO, format } from "date-fns";
 import { Post } from "../../types/post";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync("posts");
-
-  if (!files) {
+  if(fs.readdirSync("posts").length === 0) {
     return {
       props: {
         posts: [],
@@ -27,6 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   }
 
+  const files = fs.readdirSync("posts");
 
   const posts = files.map(fileName => {
     const slug = fileName.replace(".md", "");
@@ -56,9 +55,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
       >
         {posts.length === 0 && (
-          <Center>
             <Text>No posts found</Text>
-            </Center>
             )}
         {posts.map(({ slug, frontmatter }: Post) => (
           <BlogListPreview
