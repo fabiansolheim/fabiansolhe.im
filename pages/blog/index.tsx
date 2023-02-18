@@ -19,6 +19,15 @@ import { Post } from "../../types/post";
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync("posts");
 
+  if (!files) {
+    return {
+      props: {
+        posts: [],
+      },
+    };
+  }
+
+
   const posts = files.map(fileName => {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
@@ -46,6 +55,11 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         gap={10}
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
       >
+        {posts.length === 0 && (
+          <Center>
+            <Text>No posts found</Text>
+            </Center>
+            )}
         {posts.map(({ slug, frontmatter }: Post) => (
           <BlogListPreview
             key={slug}
