@@ -42,7 +42,7 @@ h2 {
 }
 
 a {
-	font-weight: bold;
+	font-weight: 400;
 	background: linear-gradient(90.01deg,#e59cff .01%,#ba9cff 50.01%,#9cb2ff 100%),linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.28) 100%);
     background-blend-mode: screen,normal;
     -webkit-background-clip: text;
