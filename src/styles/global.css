@@ -1,27 +1,62 @@
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Inter-Regular.woff2');
+}
+
+@font-face {
+	font-family: 'Inter-Medium';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/Inter-Medium.woff2'); 
+}
+
+@font-face {
+	font-family: 'Inter-Bold';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/Inter-Bold.woff2'); 
+}
+
+
 body {
-	font-family: Verdana, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-family: Inter, sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: 95ch;
 	text-align: left;
-	background-color: #fff;
+	background-color: #030014;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
-	color: #444;
+	color: #f3f5f7;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-	color: #222;
+
+h2 {
+	font-family: Inter-Medium, sans-serif;
 }
+
 a {
-	color: #7f32dc;
+	font-weight: bold;
+	background: linear-gradient(90.01deg,#e59cff .01%,#ba9cff 50.01%,#9cb2ff 100%),linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.28) 100%);
+    background-blend-mode: screen,normal;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlighted {
+	font-weight: 400;
+	background: linear-gradient(90.01deg,#e59cff .01%,#ba9cff 50.01%,#9cb2ff 100%),linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.28) 100%);
+    background-blend-mode: screen,normal;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 nav a {
 	margin-right: 10px;
@@ -38,26 +73,5 @@ content {
 }
 table {
 	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
-pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
 }
 
