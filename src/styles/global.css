@@ -16,11 +16,11 @@
 
 body {
 	-webkit-font-smoothing: antialiased;
-	font-family: WorkSans, sans-serif;
+	font-family: Helvetica, sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: 95ch;
-	font-weight: 500;
+	font-weight: 200;
 	text-align: left;
 	font-size: 18px;
 	background-color: #030014;
@@ -30,20 +30,17 @@ body {
 	color: #f3f5f7;
 }
 
-p {
-	font-family: Almarai;
-}
-
-h2 {
-	font-family: WorkSans, sans-serif;
+span {
+	display: inline-block;
 }
 
 a {
-	background: linear-gradient(90.01deg,#e59cff .01%,#ba9cff 50.01%,#9cb2ff 100%),linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.28) 100%);
-    background-blend-mode: screen,normal;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+	color: #964BF4;
+	text-decoration: none;
+}
+h1,
+h2 {
+	font-family: WorkSans, sans-serif;
 }
 
 nav a {
