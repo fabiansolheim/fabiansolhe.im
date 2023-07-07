@@ -20,10 +20,10 @@ body {
 	margin: auto;
 	padding: 20px;
 	max-width: 95ch;
+	background-color: #030014;
 	font-weight: 200;
 	text-align: left;
 	font-size: 18px;
-	background-color: #030014;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
@@ -33,8 +33,13 @@ body {
 span {
 	display: inline-block;
 }
-
+#tsparticles {
+	position: fixed;
+	width: 100%;
+	z-index: -1;
+}
 a {
+
 	color: #964BF4;
 	text-decoration: none;
 }

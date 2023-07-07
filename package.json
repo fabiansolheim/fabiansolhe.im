@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^3.5.0",
-    "astro": "^2.6.4"
+    "astro": "^2.6.4",
+    "astro-particles": "^2.10.0",
+    "tsparticles": "^2.10.1",
+    "tsparticles-engine": "^2.10.1",
+    "tsparticles-preset-stars": "^2.10.1"
   }
 }
