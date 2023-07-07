@@ -19,6 +19,7 @@ body {
 	font-family: Helvetica, sans-serif;
 	margin: auto;
 	padding: 20px;
+	-webkit-text-size-adjust: 100%;
 	max-width: 95ch;
 	background-color: #030014;
 	font-weight: 200;
