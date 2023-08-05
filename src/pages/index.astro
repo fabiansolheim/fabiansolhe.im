@@ -2,113 +2,87 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Particles from "astro-particles";
-import { options } from "../styles/options";
-declare global {
-	interface Window {
-		particlesInit: any;
-	}
-}
 
 const age = Math.floor(
-	(Number(new Date()) - Number(new Date(2000, 11, 28))) / 31557600000
+  (Number(new Date()) - Number(new Date(2000, 11, 28))) / 31557600000
 );
 ---
 
-<script>
-	import type { Engine } from "tsparticles-engine";
-	import { loadFull } from "tsparticles";
-
-	window.particlesInit = async (engine: Engine) => {
-		await loadFull(engine);
-	};
-</script>
-
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
 
-		<main>
-			<h1>Hey<span class="wave">👋🏼</span></h1>
-			<p>
-				My name is Fabian Solheim. I am a {age} year old software developer
-				living in Oslo, Norway. Currently working as a software developer
-				at <a href="https://www.milientsoftware.com" target="_blank"
-					>Milient</a
-				>. Interested in all things TypeScript, React and Go.
-			</p>
+    <main>
+      <h1>Hey<span class="wave">👋🏼</span></h1>
+      <p>
+        My name is Fabian Solheim. I am a {age} year old software developer living
+        in Oslo, Norway. Currently working as a software developer at <a
+          href="https://www.milientsoftware.com"
+          target="_blank">Milient</a
+        >. Interested in all things TypeScript, React and Go.
+      </p>
 
-			<p>
-				Feel free to check out my <a
-					href="https://www.threads.net/@fabiansolheim"
-					target="_blank">Threads</a
-				>,
-				<a
-					href="https://www.linkedin.com/in/FabianSolheim"
-					target="_blank">LinkedIn</a
-				>
-				or <a
-					href="https://www.github.com/FabianSolheim"
-					target="_blank">Github</a
-				>.
-			</p>
-			<Particles
-				id="tsparticles"
-				options={options}
-				init="particlesInit"
-			/>
-		</main>
-		<style>
-			main {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				width: 45vw;
-				height: 80vh;
-			}
+      <p>
+        Feel free to check out my
+        <a href="https://www.linkedin.com/in/FabianSolheim" target="_blank"
+          >LinkedIn</a
+        >
+        or <a href="https://www.github.com/FabianSolheim" target="_blank"
+          >Github</a
+        >.
+      </p>
+    </main>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45vw;
+        height: 70vh; /* 100vh - header height */
+      }
 
-			@media screen and (max-width: 600px) {
-				main {
-					width: 90vw;
-				}
-			}
-			.wave {
-				animation-name: wave-animation;
-				animation-duration: 2.5s;
-				animation-iteration-count: infinite;
-				transform-origin: 70% 70%;
-				display: inline-block;
-			}
+      @media screen and (max-width: 600px) {
+        main {
+          width: 90vw;
+        }
+      }
+      .wave {
+        animation-name: wave-animation;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        transform-origin: 70% 70%;
+        display: inline-block;
+      }
 
-			@keyframes wave-animation {
-				0% {
-					transform: rotate(0deg);
-				}
-				10% {
-					transform: rotate(14deg);
-				}
-				20% {
-					transform: rotate(-8deg);
-				}
-				30% {
-					transform: rotate(14deg);
-				}
-				40% {
-					transform: rotate(-4deg);
-				}
-				50% {
-					transform: rotate(10deg);
-				}
-				60% {
-					transform: rotate(0deg);
-				}
-				100% {
-					transform: rotate(0deg);
-				}
-			}
-		</style>
-	</body>
+      @keyframes wave-animation {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(14deg);
+        }
+        20% {
+          transform: rotate(-8deg);
+        }
+        30% {
+          transform: rotate(14deg);
+        }
+        40% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        60% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </body>
 </html>
