@@ -19,11 +19,12 @@ const age = Math.floor(
       <h1>Hey<span class="wave">👋🏼</span></h1>
       <p>
         My name is Fabian Solheim. I am a {age} year old software developer living
-        in Oslo, Norway. Currently working as a software developer at <a
-          href="https://www.milientsoftware.com"
-          target="_blank">Milient</a
-        >. Interested in all things TypeScript, React and Go.
+        in Oslo, Norway. 
       </p>
+      <p>Currently working as a software developer at <a
+        href="https://www.milientsoftware.com"
+        target="_blank">Milient</a
+      >. Interested in all things TypeScript, React and Go.</p>
 
       <p>
         Feel free to check out my
@@ -36,18 +37,15 @@ const age = Math.floor(
       </p>
     </main>
     <style>
+      p:not(:last-child) {
+        margin: 0
+      }
       main {
         display: flex;
         flex-direction: column;
+        max-width: 550px;
         justify-content: center;
-        width: 45vw;
-        height: 70vh; /* 100vh - header height */
-      }
-
-      @media screen and (max-width: 600px) {
-        main {
-          width: 90vw;
-        }
+        height: 70vh; 
       }
       .wave {
         animation-name: wave-animation;
